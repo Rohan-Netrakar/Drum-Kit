@@ -4,31 +4,89 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Drum Kit</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+  <title>Modern Drum Kit</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
   <main>
-    <h1 id="title">Drum 🥁 Kit</h1>
-  <div class="set">
-    <button class="w drum">w</button>
-    <button class="a drum">a</button>
-    <button class="s drum">s</button>
-    <button class="d drum">d</button>
-    <button class="j drum">j</button>
-    <button class="k drum">k</button>
-    <button class="l drum">l</button>
-  </div>
+    <h1 id="title">Drum <i class="fas fa-drum"></i> Kit</h1>
+    <p class="subtitle">Press keys or click on drums to play</p>
+    
+    <div class="set">
+      <button class="w drum">
+        <div class="key-label">W</div>
+        <div class="instrument">Tom 1</div>
+      </button>
+      <button class="a drum">
+        <div class="key-label">A</div>
+        <div class="instrument">Tom 2</div>
+      </button>
+      <button class="s drum">
+        <div class="key-label">S</div>
+        <div class="instrument">Tom 3</div>
+      </button>
+      <button class="d drum">
+        <div class="key-label">D</div>
+        <div class="instrument">Tom 4</div>
+      </button>
+      <button class="j drum">
+        <div class="key-label">J</div>
+        <div class="instrument">Crash</div>
+      </button>
+      <button class="k drum">
+        <div class="key-label">K</div>
+        <div class="instrument">Kick</div>
+      </button>
+      <button class="l drum">
+        <div class="key-label">L</div>
+        <div class="instrument">Snare</div>
+      </button>
+    </div>
+    
+    <div class="visualizer" id="visualizer"></div>
+    
+    <div class="controls">
+      <button class="control-btn" id="recordBtn">
+        <i class="fas fa-record-vinyl"></i> Record
+      </button>
+      <button class="control-btn" id="playBtn">
+        <i class="fas fa-play"></i> Play
+      </button>
+      <button class="control-btn" id="demoBtn">
+        <i class="fas fa-magic"></i> Demo
+      </button>
+      <button class="control-btn" id="clearBtn">
+        <i class="fas fa-trash"></i> Clear
+      </button>
+    </div>
+    
+    <div class="recordings-section">
+      <h2><i class="fas fa-history"></i> Recordings</h2>
+      <div class="recordings-list" id="recordingsList">
+        <!-- Recordings will be loaded here -->
+      </div>
+    </div>
   </main>
+  
+  <div class="modal" id="saveModal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModal">&times;</button>
+      <h2><i class="fas fa-save"></i> Save Recording</h2>
+      <div class="form-group">
+        <label for="recordingName">Recording Name:</label>
+        <input type="text" id="recordingName" placeholder="Enter a name for your recording">
+      </div>
+      <button class="save-btn" id="saveRecordingBtn">
+        <i class="fas fa-save"></i> Save Recording
+      </button>
+    </div>
+  </div>
+  
   <footer>
-    Made by Rohan
+    Made with <i class="fas fa-heart" style="color: var(--secondary);"></i> by Rohan
   </footer>
-
-
-
-
   <script src="./index.js"></script>
 </body>
 
